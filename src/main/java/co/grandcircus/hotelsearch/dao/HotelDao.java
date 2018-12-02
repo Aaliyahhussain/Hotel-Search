@@ -23,10 +23,8 @@ public class HotelDao {
 	EntityManager em;
 
 	public Set<String> findAllCities() {
-		// This query returns a list of Strings, so I give it String.class
 		List<String> cityList = em.createQuery("SELECT DISTINCT city FROM Hotel", String.class)
 				.getResultList();
-		// Convert the List to a Set.
 		return new TreeSet<>(cityList);
 	}
 	
@@ -36,12 +34,30 @@ public class HotelDao {
 					.setParameter("city", city)
 					.getResultList();
 		} catch (NoResultException ex) {
-			// No user with that username found.
 			return null;
 		}
 		
 		
 	}
+	
+	public List<Hotel> findByName(String name) {
+		try {
+			return em.createQuery("FROM Hotel WHERE name = :name", Hotel.class)
+					.setParameter("name", name)
+					.getResultList();
+		} catch (NoResultException ex) {
+			return null;
+		}
+	}
+	
+	public List<Hotel> findByPriceMax(Integer pricePerNight) {
+		return em.createQuery("FROM Hotel WHERE pricePerNight >= :price", Hotel.class)
+				.setParameter("price", pricePerNight)
+				.getResultList();
+		
+	}
+	
+	
 
 }
 

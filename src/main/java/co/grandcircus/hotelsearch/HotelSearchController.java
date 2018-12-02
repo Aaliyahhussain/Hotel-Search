@@ -22,14 +22,29 @@ public class HotelSearchController {
 
 	
 	@RequestMapping("/results")
-	public ModelAndView summary(@RequestParam(name="city") String city, @RequestParam(name="pricePerNight", required=false) Integer pricePerNight) {
+	public ModelAndView summary(@RequestParam(name="city") String city) {
 		ModelAndView mv = new ModelAndView("results");
 		mv.addObject("city", city);
+		mv.addObject("hotelList", hotelDao.findByCity(city));
 		return mv;
 	}
 	
-	
+	@RequestMapping("/name")
+	public ModelAndView name(@RequestParam(name="name") String name) {
+		ModelAndView mv = new ModelAndView("results");
+		mv.addObject("hotelList", hotelDao.findByName(name));
+		
+		return mv;
+	}
+		
+	@RequestMapping("/price")
+	public ModelAndView price(@RequestParam(name="price", required=false) Integer pricePerNight) {
+		ModelAndView mv = new ModelAndView("results");
+		mv.addObject("hotelList", hotelDao.findByPriceMax(pricePerNight));
+		return mv;	
 
+	}
+	
 }
 
 //@RequestMapping("/results")

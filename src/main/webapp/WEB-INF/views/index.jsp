@@ -4,10 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel = "stylesheet" href = "/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/style.css" />
-<link href='http://fonts.googleapis.com/css?family=Oleo+Script'
-	rel='stylesheet' type='text/css'>
+
+ 
 <title>Index</title>
 </head>
 <body>

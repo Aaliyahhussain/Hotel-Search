@@ -5,10 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/style.css" />
-<link href='http://fonts.googleapis.com/css?family=Oleo+Script'
-	rel='stylesheet' type='text/css'>
-	
+<link rel = "stylesheet" href = "/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
 <title>Results</title>
 </head>
 <body>
